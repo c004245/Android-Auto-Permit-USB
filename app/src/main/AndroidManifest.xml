@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <receiver android:name=".usb.UsbApproveReceiver">
+            <intent-filter>
+                <action android:name="ACTION_USB_PERMISSION_ISSUER"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

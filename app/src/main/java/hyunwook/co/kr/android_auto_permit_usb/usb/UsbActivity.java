@@ -14,6 +14,7 @@ import hyunwook.co.kr.android_auto_permit_usb.R;
 
 /**
  * 18-12-14 Fri.
+ * Refer to https://blog.csdn.net/mlj1668956679/article/details/14122787
  * USB auto-approve as simple as possible
  * added by hyunwook Cho
  * written in Guangzhou, China.
