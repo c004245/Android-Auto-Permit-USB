@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.os.IBinder;
-import android.util.Log;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -21,15 +20,11 @@ import hyunwook.co.kr.android_auto_permit_usb.usb.util.UsbDeviceDescriptor;
  */
 public class UsbApproveReceiver extends BroadcastReceiver {
 
-    private static final String TAG = UsbApproveReceiver.class.getSimpleName();
-
-    private final String ACTION_USB_PERMISSION_APP = "ACTION_USB_PERMISSION_ISSUER";
-
     @Override
     public void onReceive(Context context, Intent intent) {
 
         String action = intent.getAction();
-        Log.d(TAG, "action ->" + action);
+        String ACTION_USB_PERMISSION_APP = "ACTION_USB_PERMISSION_ISSUER";
         if (action != null && action.equals(ACTION_USB_PERMISSION_APP)) {
             try {
                 //Set UsbDevice Information

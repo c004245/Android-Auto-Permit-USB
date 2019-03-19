@@ -5,7 +5,6 @@ import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import java.util.Objects;
 
@@ -19,8 +18,6 @@ import hyunwook.co.kr.android_auto_permit_usb.R;
  * written in Guangzhou, China.
  */
 public class UsbActivity extends AppCompatActivity implements UsbContract.View {
-
-    private static final String TAG = UsbActivity.class.getSimpleName();
 
     private UsbContract.Presenter mPresenter;
 
@@ -43,7 +40,6 @@ public class UsbActivity extends AppCompatActivity implements UsbContract.View {
 
     @Override
     public void onTransferUsbInfo(Intent intent) {
-        Log.d(TAG, "onTransfer usb ->" + intent.toString());
         sendBroadcast(intent);
     }
 
