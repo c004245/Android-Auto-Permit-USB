@@ -6,7 +6,6 @@ import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import java.util.Objects;
 
@@ -33,16 +32,11 @@ public class UsbActivity extends AppCompatActivity implements UsbContract.View {
         new UsbPresenter(this, this);
         UsbManager mManager = (UsbManager) getSystemService(USB_SERVICE);
 
-        //USB Device Adapter
-        ArrayAdapter<String> mReaderAdaper = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
-
         /**
          * Check the USB device connected to the Android Device
          * Assume that only one Usb Device.
          */
         for (UsbDevice device : Objects.requireNonNull(mManager).getDeviceList().values()) {
-            mReaderAdaper.add(device.getDeviceName());
-
             mPresenter.onUsbInitPermission(getPackageName(), device);
         }
     }
